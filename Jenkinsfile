@@ -5,7 +5,7 @@ pipeline{
            string(name: 'Greeting', defaultValue: 'karna', description: 'How should I greet the world?')
             choice(
                    name: 'myParameter',
-                   choices: "Option1\Option2",
+                   choices: "Option1\nOption2",
                    description: 'interesting stuff' )
              }
        }
