@@ -8,8 +8,21 @@ pipeline{
                    choices: "Option1\nOption2",
                    description: 'interesting stuff' )
 
+
+
+                   choice(
+                         name: 'Env',
+                         choices: ['DEV', 'QA', 'UAT', 'PROD'],
+                         description: 'Passing the Environment'
+                       )
+
        }
           stages{
+
+
+
+
+
            stage('Example') {
            when { expression { return params.myParameter == "Option1"}}
                steps {
@@ -28,6 +41,16 @@ pipeline{
                        echo"test successfull"
                    }
                }
+
+
+               stage('Environment') {
+                     steps {
+                       echo " The environment is ${params.Env}"
+                     }
+                   }
+
+
+
 
                stage("deploy"){
                    steps{
