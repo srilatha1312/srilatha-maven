@@ -27,6 +27,24 @@ pipeline{
                    steps{
                     echo"deploy sucessfull"
                     }
+
                }
-        }  }
+
+        }
+
+
+        post{
+             always{
+             echo"this is post"
+
+             }
+             }
+
+
+
+
+        }
+
+
+
 
