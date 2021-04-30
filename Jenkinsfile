@@ -1,7 +1,7 @@
 pipeline{
    agent any
 
-      label '!windows'
+    label 'SL202_win'
 
    parameters {
            string(name: 'Greeting', defaultValue: 'karna', description: 'How should I greet the world?')
