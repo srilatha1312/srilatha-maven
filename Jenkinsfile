@@ -1,6 +1,8 @@
 pipeline{
    agent any
 
+      label '!windows'
+
    parameters {
            string(name: 'Greeting', defaultValue: 'karna', description: 'How should I greet the world?')
             choice(
@@ -17,7 +19,22 @@ pipeline{
                        )
 
        }
+
+           environment {
+                  DISABLE_AUTH = 'true'
+                  DB_ENGINE    = 'sqlite'
+              }
+
+
           stages{
+
+          stage('environment') {
+                      steps {
+                          echo "Database engine is ${DB_ENGINE}"
+                          echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                          sh 'printenv'
+                      }
+                  }
 
 
 
