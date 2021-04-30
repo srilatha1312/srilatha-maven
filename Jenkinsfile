@@ -3,9 +3,15 @@ pipeline{
 
    parameters {
            string(name: 'Greeting', defaultValue: 'karna', description: 'How should I greet the world?')
+            choice(
+                   name: 'myParameter',
+                   choices: "Option1\Option2",
+                   description: 'interesting stuff' )
+             }
        }
           stages{
            stage('Example') {
+           when { expression { return params.myParameter == "Option1"}}
                steps {
                    echo "${params.Greeting} World!"
                }
