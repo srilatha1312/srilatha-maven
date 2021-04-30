@@ -7,7 +7,7 @@ pipeline{
                    name: 'myParameter',
                    choices: "Option1\nOption2",
                    description: 'interesting stuff' )
-             }
+
        }
           stages{
            stage('Example') {
